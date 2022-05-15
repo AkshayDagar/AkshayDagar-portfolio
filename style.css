@@ -1,0 +1,174 @@
+:root {
+    --mainColor: #eaeaea;
+    --secondaryColor: #fff;
+
+    --borderColor: #c1c1c1;
+
+    --mainText: black;
+    --secondaryText: #4b5156;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+strong {
+    color: var(--mainText);
+    font-family: 'Roboto Mono', monospace;
+}
+
+p,
+span,
+label,
+input,
+textarea {
+    color: var(--secondaryText);
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+
+nav {
+    display: flex;
+    background-color: aqua;
+    font-family: 'Roboto Mono', monospace;
+    align-items: left;
+    min-height: 8vh;
+}
+
+.navlinks {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 1%;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.navlinks a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #17a2b8;
+}
+
+.navlinks a:hover::after {
+    content: "_";
+    position: absolute;
+
+}
+
+.navlinks a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: blue;
+}
+
+.navlinks li {
+    list-style: none;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    margin-top: 2%;
+    margin-left: 80%;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:1111px) {
+    .navlinks {
+        width: 50%;
+    }
+
+    .main-container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navlinks {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 6.9vh;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .navlinks li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.s1 {
+    background-color: var(--mainColor);
+    border-bottom: 1px solid var(--borderColor);
+    overflow: auto;
+}
+
+.s2 {
+    background-color: var(--secondaryColor);
+    border-bottom: 1px solid var(--borderColor);
+    overflow: auto;
+}
+
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+}
